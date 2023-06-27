@@ -189,6 +189,7 @@ sudo systemctl start jenkins.service
        * Windows => Scheduler
        * Linux => Cron Job
 * Jenkins is a Cron/Scheduler on Steriods fine tuned for Continuous Integration and Continuous Deployment
+* Plugin is an addon to jenkins, which provides functionality on the jenkins ui
 
 
 
