@@ -18,7 +18,7 @@
 
     ![Preview](./Images/Jenkins48.png)
 
-    Open MRS:
+    * Open MRS:
       * developed in Java
       * This is open medical record system
       * repo url: [Refer Here](https://github.com/openmrs/openmrs-core)
