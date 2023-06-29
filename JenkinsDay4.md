@@ -47,6 +47,8 @@ sudo mv apache-maven-3.9.3 /opt/
 export M2_HOME='/opt/apache-maven-3.9.3'
 PATH="$M2_HOME/bin:$PATH"
 export PATH
+echo 'export M2_HOME=/opt/apache-maven-3.9.3' >> ~/.bashrc
+echo 'export PATH=${M2_HOME}/bin:${PATH}' >> ~/.bashrc
 ```
 * Logout & Login
 
