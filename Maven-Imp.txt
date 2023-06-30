@@ -1,0 +1,64 @@
+  <groupId>com.wakaleo.gameoflife</groupId>
+    <artifactId>gameoflife</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+group id: it is a unique id to identify the project of a client
+
+
+artifact id: project name
+
+ex: i m working in wipro, and i m creting project for a client Apple. 
+Now i will use group id for project com.apple
+
+version : what is the ver of app
+
+ gameoflife.war  
+
+I had the same issue but I solved it changing the easyb version to 0.9.7:
+maven-easyb-plugin
+0.9.7
+
+In root pom.xml and gameoflife-core/pom.xml
+
+regards
+
+mvn clean package -DskipTests
+
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M3</version>
+    </plugin>
+</plugins>
+
+
+echo 'export M2_HOME=/opt/apache-maven-3.9.3' >> ~/.bashrc
+
+echo 'export PATH=${M2_HOME}/bin:${PATH}' >> ~/.bashrc
+
+
+convention over configuration: 
+
+it can follow a systematic folder structure or it might able to
+ choose a diiferent folder structure deppending upon our need
+
+
+
+
+
+````````
+Free style project Overview:
+
+General 
+
+Source Code management
+
+Build triggers
+
+Build Environment
+
+Build Steps
+
+Post Build Actions
+

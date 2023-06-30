@@ -301,6 +301,7 @@ mvn help:effective-pom
     * central
     * remote
 
+![Preview](./Images/Maven1.png)
 ## Maven Plugins
 * Maven is plugin execution framework, each task is executed by plugins
 
