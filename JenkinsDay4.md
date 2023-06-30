@@ -37,16 +37,18 @@ mvn --version
 
 ```
 cd /tmp
-wget https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz
-tar -xvzf  apache-maven-3.8.5-bin.tar.gz
-sudo mv apache-maven-3.8.5 /opt/
+wget https://dlcdn.apache.org/maven/maven-3/3.9.3/binaries/apache-maven-3.9.3-bin.tar.gz
+tar -xvzf  apache-maven-3.9.3-bin.tar.gz
+sudo mv apache-maven-3.9.3 /opt/
 ```
 * set the following environmental variables in /etc/profile.d/java.sh
 
 ```
-export M2_HOME='/opt/apache-maven-3.8.5'
+export M2_HOME='/opt/apache-maven-3.9.3'
 PATH="$M2_HOME/bin:$PATH"
 export PATH
+echo 'export M2_HOME=/opt/apache-maven-3.9.3' >> ~/.bashrc
+echo 'export PATH=${M2_HOME}/bin:${PATH}' >> ~/.bashrc
 ```
 * Logout & Login
 
