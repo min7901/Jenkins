@@ -24,6 +24,7 @@
                     * Loadrunner
         * Nightbuilds on different branch (RELEASE_v1.0.0_SPRINTn)
 
+![Preview](./Images/Jenkins123.png)
 
 * Configuring Day Builds where a build is created for every commit:
     * Day build to be started when any developer pushes the changes to the branch

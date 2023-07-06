@@ -1,0 +1,7 @@
+JENKINS_URL/job/demo-project/build?token=TOKEN_NAME
+
+http://13.235.87.131:8080/job/demo-project/build?token=mysecrettoken
+
+http://13.235.87.131:8080/buildByToken/build?job=demo-project&token=mysecrettoken
+
+curl http://13.235.87.131:8080/buildByToken/build?job=demo-project\&token=mysecrettoken
