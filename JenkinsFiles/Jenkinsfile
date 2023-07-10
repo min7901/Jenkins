@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M3"
+    }
+    triggers { pollSCM('* * * * *') }
+    stages {
+        stage('SourceCode') {
+            steps {
+                git branch: 'master', url: 'https://github.com/devops-easy/game-of-life.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+        stage('Archive the Artifacts') {
+            steps {
+               archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+            }
+        }
+    }
+}
+
