@@ -1,0 +1,48 @@
+pipeline {
+    agent any
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M3"
+    }
+    options { 
+        timeout(time: 1, unit: 'HOURS')
+        retry(2) 
+    }
+    triggers {
+        cron('0 * * * *')
+    }
+    parameters {
+        choice(name: 'GOAL', choices: ['compile', 'package', 'clean package'])
+    }
+    stages {
+        stage('Source Code') {
+            steps {
+                git url: 'https://github.com/openmrs/openmrs-core.git', 
+                branch: 'master'
+            }
+
+        }
+        stage('Build the Code and sonarqube-analysis') {
+            steps {
+                withSonarQubeEnv('SONAR_LATEST') {
+                    sh script: "mvn ${params.GOAL} sonar:sonar"
+                }
+
+            }
+        }
+        stage('reporting') {
+            steps {
+                junit testResults: 'target/surefire-reports/*.xml'
+            }
+        }
+        stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
+
+    }
+
+}
