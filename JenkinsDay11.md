@@ -12,7 +12,8 @@
 ==> $ wget -qO - https://releases.jfrog.io/artifactory/api/gpg/key/public | sudo apt-key add -;
 * Add jfrog repository in your apt list. Just copy and paste the following command in your terminal.
 
-==> $ echo "deb https://releases.jfrog.io/artifactory/artifactory-pro-debs xenial main" | sudo tee -a /etc/apt/sources.list;
+==> $ echo "deb https://jfrog.bintray.com/artifactory-debs focal main" | sudo tee /etc/apt/sources.list.d/jfrog.list
+
 * Let’s then update apt index,
 
 ==> $ sudo apt update
